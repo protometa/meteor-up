@@ -16,8 +16,13 @@ if(action == 'init') {
   ActionsRegistry.init();
 } else {
   var cwd = path.resolve('.');
+
   //read config and validate it
-  var config = Config.read();
+  var mupJsonFile = process.argv[3]
+  if(typeof mupJsonFile === "undefined") {
+    mupJsonFile = "mup.json";
+  }
+  var config = Config.read(mupJsonFile);
 
   if(config._passwordExists) {
     //check for sshpass
