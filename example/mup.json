@@ -23,10 +23,10 @@
   "setupPhantom": true,
 
   // Application name (No spaces)
-  "appName": "meteor",
+  "appName": "<%= appName %>",
 
   // Location of app (local directory)
-  "app": "/path/to/the/app",
+  "app": "./",
 
   // Configure environment
   "env": {
