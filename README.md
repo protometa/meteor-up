@@ -185,7 +185,7 @@ You can use an array to deploy the same configuration to multiple servers at onc
 
 To deploy different configurations (e.g. staging, production, etc.), you can use separate Meteor Up configuration files for each target. Specify the target configuration file following a command, for example: `meteor deploy staging.json`.
 
-If you are deploying multiple configurations to the same server, make sure each has a unique `appName` field and `PORT` environment variable.
+If you are deploying multiple configurations to the same server, make sure each has a unique `appName` field and `PORT` environment variable.  Meteor Up only does the deployment; if you need to configure subdomains, you need to manually setup a reverse proxy yourself.
 
 #### Custom Meteor Binary
 
@@ -244,18 +244,6 @@ It is possible to provide server specific environment variables. Add the `env` o
 ~~~
 
 By default, Meteor UP adds `CLUSTER_ENDPOINT_URL` to make [cluster](https://github.com/meteorhacks/cluster) deployment simple. But you can override it by defining it yourself.
-
-### Multiple Deployments
-
-Meteor Up supports multiple deployments to a single server. Meteor Up only does the deployment; if you need to configure subdomains, you need to manually setup a reverse proxy yourself.
-
-Let's assume, we need to deploy production and staging versions of the app to the same server. The production app runs on port 80 and the staging app runs on port 8000.
-
-We need to have two separate Meteor Up projects. For that, create two directories and initialize Meteor Up and add the necessary configurations.
-
-In the staging `mup.json`, add a field called `appName` with the value `staging`. You can add any name you prefer instead of `staging`. Since we are running our staging app on port 8000, add an environment variable called `PORT` with the value 8000.
-
-Now setup both projects and deploy as you need.
 
 ### SSL Support
 
