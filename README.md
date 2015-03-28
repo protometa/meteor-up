@@ -181,9 +181,11 @@ Meteor Up checks if the deployment is successful or not just after the deploymen
 
 #### Multiple Deployment Targets
 
-You can use an array to deploy to multiple servers at once.
+You can use an array to deploy the same configuration to multiple servers at once.
 
-To deploy to *different* environments (e.g. staging, production, etc.), use separate Meteor Up configurations in separate directories, with each directory containing separate `mup.json` and `settings.json` files, and the `mup.json` files' `app` field pointing back to your app's local directory.
+To deploy different configurations (e.g. staging, production, etc.), you can use separate Meteor Up configuration files for each target. Specify the target configuration file following a command, for example: `meteor deploy staging.json`.
+
+If you are deploying multiple configurations to the same server, make sure each has a unique `appName` field and `PORT` environment variable.
 
 #### Custom Meteor Binary
 
