@@ -120,6 +120,9 @@ This will create two files in your Meteor Up project directory:
     "MAIL_URL": "smtp://postmaster%40myapp.mailgun.org:adj87sjhd7s@smtp.mailgun.org:587/"
   },
 
+  // Optionally override the default 'settings.json' file
+  "settingsFile": "settings-staging.json"
+
   // Meteor Up checks if the app comes online just after the deployment.
   // Before mup checks that, it will wait for the number of seconds configured below.
   "deployCheckWaitTime": 15
