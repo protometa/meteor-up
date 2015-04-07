@@ -5,10 +5,12 @@ var cjson = require('cjson');
 var Config = require('../lib/config');
 var ActionsRegistry = require('../lib/actions');
 var helpers = require('../lib/helpers');
+var packageJson = require('../package.json')
 require('colors');
 
 console.log('\nMeteor Up: Production Quality Meteor Deployments'.bold.blue);
-console.log('------------------------------------------------\n'.bold.blue);
+console.log('------------------------------------------------'.bold.blue);
+console.log('version '+packageJson.version+'\n')
 
 var action = process.argv[2];
 if(action == 'init') {
